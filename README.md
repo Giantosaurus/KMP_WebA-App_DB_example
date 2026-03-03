@@ -1,4 +1,21 @@
-This is a Kotlin Multiplatform project targeting Android, Web.
+#### Installationshinweise für die simple sqldelight DB
+Wichtige Changes für sqdelight-DB:
+
+1. Dependencies
+   composeApp/build.gradle.kts (hier Pfad für sqdelight anpassen sowie Packagenames etc.)
+2. Verzeichnis(se) anlegen an richtiger Stelle und AppDatabase.sq erstellen
+   -Beispiele-
+   BeeClean\composeApp\src\commonMain\sqldelight\com\beeCleanDB\project\db\AppDatabase.sq
+   SimpleKmpDb\composeApp\src\commonMain\sqldelight\com\isa\project\db\AppDatabase.sq
+3. DatabaseDriverFactory.kt in androidMain und commonMain anlegen
+4. NoteRepository in commonMain anlegen (NoteRepository greift auf die SQL Methoden in AppDatabase.sq zu)
+5. DatabaseDriver und NoteRepository in der MainActivity von androidMain und commonMain anlegen (und nutzen, have fun!)
+
+Es müssen:
+1) gradle durchlaufen
+2) Über die IDE ui build-> assemble Project ausgeführt werden, damit die SQL Methoden registriert und im Code erkannt werden (sowie vom Compiler erkannt werden)
+
+#### This is a Kotlin Multiplatform project targeting Android, Web.
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
