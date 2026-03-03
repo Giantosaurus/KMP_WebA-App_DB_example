@@ -1,0 +1,10 @@
+CREATE TABLE Note (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+text TEXT NOT NULL
+);
+
+insertNote:
+INSERT INTO Note(text) VALUES (?);
+
+selectAll:
+SELECT * FROM Note;
